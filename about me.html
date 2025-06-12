@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Vine Classics</title>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --vine-green: #00bf8f;
+      --vine-dark: #009f75;
+      --text-color: #1a1a1a;
+      --bg-color: #e8fff6;
+      --card-bg: #ffffff;
+      --grain: url('https://www.transparenttextures.com/patterns/linen.png');
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Baloo 2', cursive;
+      background-color: var(--bg-color);
+      background-image: var(--grain);
+      background-blend-mode: overlay;
+      color: var(--text-color);
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+
+    header {
+      background: linear-gradient(90deg, #00bf8f, #00e3a8);
+      color: white;
+      padding: 25px 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: fadeDown 1.2s ease-out;
+      box-shadow: 0 4px 12px rgba(0, 191, 143, 0.5);
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      font-weight: 600;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    }
+
+    header img {
+      height: 48px;
+      width: auto;
+      vertical-align: middle;
+      filter: drop-shadow(0 1px 2px rgba(0,0,0,0.3));
+    }
+
+    main {
+      max-width: 900px;
+      margin: 50px auto;
+      padding: 20px;
+      background-color: var(--card-bg);
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0, 191, 143, 0.1);
+      animation: fadeUp 1.2s ease-out;
+    }
+
+    section {
+      margin-bottom: 50px;
+    }
+
+    section h2 {
+      color: var(--vine-dark);
+      font-size: 2rem;
+      margin-bottom: 15px;
+      border-bottom: 2px solid var(--vine-green);
+      display: inline-block;
+      padding-bottom: 5px;
+    }
+
+    p {
+      margin: 12px 0;
+      font-size: 1.1rem;
+    }
+
+    .faq-item {
+      margin-bottom: 25px;
+      background: #f2fffc;
+      padding: 18px;
+      border-left: 6px solid var(--vine-green);
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0, 191, 143, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .faq-item:hover {
+      background-color: #e1fff5;
+      transform: scale(1.02);
+    }
+
+    .faq-item strong {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 1.15rem;
+      color: #333;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 15px;
+      font-size: 0.95rem;
+      color: #555;
+      background-color: #d9fff3;
+      border-top: 1px solid #c6fce9;
+      margin-top: 40px;
+      font-family: sans-serif;
+    }
+
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2rem;
+        flex-direction: column;
+        text-align: center;
+      }
+
+      header img {
+        margin-top: 8px;
+      }
+
+      main {
+        margin: 20px 10px;
+        padding: 15px;
+      }
+
+      section h2 {
+        font-size: 1.5rem;
+      }
+    }
+
+    /* Animations */
+    @keyframes fadeUp {
+      0% {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeDown {
+      0% {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>
+      <span>Vine Classics</span>
+      <img src="logo and photos\Untitled207_20250606152121.jpeg" alt="Vine Logo" />
+    </h1>
+  </header>
+
+  <main>
+    <section id="about">
+      <h2>About Me</h2>
+      <p>Hey! I'm Vine Classics, I post old vines on the app Vine to revive the old vibes again and regain the world we missed.</p>
+    </section>
+
+    <section id="faq">
+      <h2>FAQ</h2>
+
+      <div class="faq-item">
+        <strong>Q: Why this idea ?</strong>
+        <p>A: I made this account to repost old vines on the Vine app, typically to maintain the spirit of the vibes and as an old archive for old vines. </p>
+      </div>
+
+      <div class="faq-item">
+        <strong>Q: Will you ever host vines here ?</strong>
+        <p>A: Not directly. I embed and reference old Vines, through the Vine app patched by Ivy. Ivy is a revival project made to revive the old Vine app.</p>
+      </div>
+
+      <div class="faq-item">
+        <strong>Q: Where can I follow you?</strong>
+        <p>A: I’m on Vine as Vine Classics. You’ll find nostalgic hits posted there.</p>
+      </div>
+
+      <div class="faq-item">
+        <strong>Q: What's your favorite Vine?</strong>
+        <p>A: Probably “Oh no I hope I don't fall” by Tyler the Creator. Timeless delivery.</p>
+      </div>
+
+      <div class="faq-item">
+        <strong>Q: Can I submit my own edits?</strong>
+        <p>A: Yes! Text me on Discord vineclassics and I may feature you in one of my Vines !</p>
+      </div>
+
+      <div class="faq-item">
+        <strong>Q: Will Vine ever come back?</strong>
+        <p>A: Probably not but, I post Vines on a revival project called Ivy. Go check it out !!</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    Made By Vine Classics. Just here for the vibes!
+  </footer>
+
+</body>
+</html>
