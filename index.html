@@ -9,10 +9,8 @@
     :root {
       --vine-green: #00bf8f;
       --vine-dark: #009f75;
-      --text-color: #1a1a1a;
-      --bg-color: #e8fff6;
-      --card-bg: #ffffff;
-      --grain: url('https://www.transparenttextures.com/patterns/linen.png');
+      --text-color: #ffffff;
+      --card-bg: rgba(255, 255, 255, 0.8);
     }
 
     * {
@@ -23,155 +21,125 @@
       margin: 0;
       padding: 0;
       font-family: 'Baloo 2', cursive;
-      background-color: var(--bg-color);
-      background-image: var(--grain);
-      background-blend-mode: overlay;
       color: var(--text-color);
       line-height: 1.6;
       scroll-behavior: smooth;
+      height: 100%;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      z-index: -2;
+      background: black;
+    }
+
+    #bg-video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      min-width: 100%;
+      min-height: 100%;
+      z-index: -1;
+      object-fit: cover;
+      filter: brightness(0.6);
     }
 
     header {
-      background: linear-gradient(90deg, #00bf8f, #00e3a8);
+      background: rgba(0, 191, 143, 0.9);
       color: white;
-      padding: 25px 30px;
+      padding: 20px;
       display: flex;
-      align-items: center;
       justify-content: center;
-      animation: fadeDown 1.2s ease-out;
-      box-shadow: 0 4px 12px rgba(0, 191, 143, 0.5);
+      align-items: center;
+      text-align: center;
     }
 
     header h1 {
       font-size: 2.5rem;
-      font-weight: 600;
-      margin: 0;
       display: flex;
       align-items: center;
       gap: 12px;
-      text-shadow: 0 2px 4px rgba(0,0,0,0.2);
     }
 
     header img {
       height: 48px;
       width: auto;
-      vertical-align: middle;
-      filter: drop-shadow(0 1px 2px rgba(0,0,0,0.3));
     }
 
     main {
       max-width: 900px;
-      margin: 50px auto;
+      margin: 60px auto;
       padding: 20px;
       background-color: var(--card-bg);
-      border-radius: 16px;
-      box-shadow: 0 10px 30px rgba(0, 191, 143, 0.1);
-      animation: fadeUp 1.2s ease-out;
-    }
-
-    section {
-      margin-bottom: 50px;
+      border-radius: 12px;
+      backdrop-filter: blur(8px);
     }
 
     section h2 {
-      color: var(--vine-dark);
       font-size: 2rem;
-      margin-bottom: 15px;
-      border-bottom: 2px solid var(--vine-green);
-      display: inline-block;
-      padding-bottom: 5px;
-    }
-
-    p {
-      margin: 12px 0;
-      font-size: 1.1rem;
+      color: var(--vine-green);
+      margin-bottom: 20px;
     }
 
     .faq-item {
-      margin-bottom: 25px;
-      background: #f2fffc;
-      padding: 18px;
-      border-left: 6px solid var(--vine-green);
-      border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0, 191, 143, 0.1);
-      transition: transform 0.3s ease;
+      background-color: rgba(255, 255, 255, 0.4);
+      padding: 15px;
+      border-left: 5px solid var(--vine-green);
+      margin-bottom: 20px;
+      border-radius: 8px;
+      color: #000;
     }
 
     .faq-item:hover {
-      background-color: #e1fff5;
-      transform: scale(1.02);
+      background-color: rgba(255, 255, 255, 0.6);
     }
 
-    .faq-item strong {
-      display: block;
-      margin-bottom: 8px;
-      font-size: 1.15rem;
-      color: #333;
+    .vine-card-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .vine-card {
+      background: rgba(255, 255, 255, 0.85);
+      padding: 10px;
+      border-radius: 10px;
+      text-align: center;
+      color: #000;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .vine-card video {
+      width: 100%;
+      border-radius: 8px;
+    }
+
+    .vine-meta {
+      margin-top: 5px;
+      font-size: 0.9rem;
+      display: flex;
+      justify-content: space-between;
+      padding: 0 10px;
     }
 
     footer {
       text-align: center;
-      padding: 30px 15px;
-      font-size: 0.95rem;
-      color: #555;
-      background-color: #d9fff3;
-      border-top: 1px solid #c6fce9;
+      padding: 20px;
+      background: rgba(0,0,0,0.4);
+      color: white;
       margin-top: 40px;
-      font-family: sans-serif;
-    }
-
-    @media (max-width: 768px) {
-      header h1 {
-        font-size: 2rem;
-        flex-direction: column;
-        text-align: center;
-      }
-
-      header img {
-        margin-top: 8px;
-      }
-
-      main {
-        margin: 20px 10px;
-        padding: 15px;
-      }
-
-      section h2 {
-        font-size: 1.5rem;
-      }
-    }
-
-    /* Animations */
-    @keyframes fadeUp {
-      0% {
-        opacity: 0;
-        transform: translateY(40px);
-      }
-      100% {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    @keyframes fadeDown {
-      0% {
-        opacity: 0;
-        transform: translateY(-30px);
-      }
-      100% {
-        opacity: 1;
-        transform: translateY(0);
-      }
     }
   </style>
 </head>
 <body>
 
+  <video id="bg-video" autoplay muted loop playsinline></video>
+
   <header>
-    <h1>
-      <span>Vine Classics</span>
-      <img src="logo and photos\Untitled207_20250606152121.jpeg" alt="Vine Logo" />
-    </h1>
+    <h1>Vine Classics <img src="logo and photos/Untitled207_20250606152121.jpeg" alt="Vine Logo"></h1>
   </header>
 
   <main>
@@ -182,35 +150,70 @@
 
     <section id="faq">
       <h2>FAQ</h2>
-
       <div class="faq-item">
-        <strong>Q: Why this idea ?</strong>
-        <p>A: I made this account to repost old vines on the Vine app, typically to maintain the spirit of the vibes and as an old archive for old vines. </p>
+        <strong>Q: Why this idea?</strong>
+        <p>A: To revive old Vine vibes and create a nostalgic archive.</p>
       </div>
-
       <div class="faq-item">
-        <strong>Q: Will you ever host vines here ?</strong>
-        <p>A: Not directly. I embed and reference old Vines, through the Vine app patched by Ivy. Ivy is a revival project made to revive the old Vine app.</p>
+        <strong>Q: Where are the vines from?</strong>
+        <p>A: From the Ivy revival app and classic Vine uploads.</p>
       </div>
-
       <div class="faq-item">
-        <strong>Q: Where can I follow you?</strong>
-        <p>A: I’m on Vine as Vine Classics. You’ll find nostalgic hits posted there.</p>
+        <strong>Q: Can I send you a Vine?</strong>
+        <p>A: Yes! Message me on Discord @vineclassics.</p>
       </div>
-
       <div class="faq-item">
-        <strong>Q: What's your favorite Vine?</strong>
-        <p>A: Probably “Oh no I hope I don't fall” by Tyler the Creator. Timeless delivery.</p>
+        <strong>Q: Favorite Vine?</strong>
+        <p>A: "Oh no I hope I don't fall" by Tyler, the Creator.</p>
       </div>
-
       <div class="faq-item">
-        <strong>Q: Can I submit my own edits?</strong>
-        <p>A: Yes! Text me on Discord vineclassics and I may feature you in one of my Vines !</p>
+        <strong>Q: Will Vine return?</strong>
+        <p>A: Not officially, but Ivy is doing wonders!</p>
       </div>
-
       <div class="faq-item">
-        <strong>Q: Will Vine ever come back?</strong>
-        <p>A: Probably not but, I post Vines on a revival project called Ivy. Go check it out !!</p>
+        <strong>Q: How often do you post?</strong>
+        <p>A: Almost daily! Check the app regularly.</p>
+      </div>
+    </section>
+
+    <section id="my-vines">
+      <h2>Here Are Some of My Vines</h2>
+      <div class="vine-card-container">
+        <div class="vine-card">
+          <video src="videos\oh no I hope i dont fall.mp4" controls muted loop></video>
+          <div class="vine-meta">
+            <span>426 Loops</span>
+            <span>44 Likes</span>
+          </div>
+        </div>
+        <div class="vine-card">
+          <video src="videos\at the plaza.mp4" controls muted loop></video>
+          <div class="vine-meta">
+            <span>324 Loops</span>
+            <span>29 Likes</span>
+          </div>
+        </div>
+        <div class="vine-card">
+          <video src="videos\SIIIIIIKE.mp4" controls muted loop></video>
+          <div class="vine-meta">
+            <span>282 Loops</span>
+            <span>28 Likes</span>
+          </div>
+        </div>
+        <div class="vine-card">
+          <video src="videos\grabing a souvenir from france.mp4" controls muted loop></video>
+          <div class="vine-meta">
+            <span>344 Loops</span>
+            <span>30 Likes</span>
+          </div>
+        </div>
+        <div class="vine-card">
+          <video src="videos\check out the pizza printer.mp4" controls muted loop></video>
+          <div class="vine-meta">
+            <span>251 Loops</span>
+            <span>26 Likes</span>
+          </div>
+        </div>
       </div>
     </section>
   </main>
@@ -219,5 +222,20 @@
     Made By Vine Classics. Just here for the vibes!
   </footer>
 
+  <script>
+    const videoEl = document.getElementById('bg-video');
+    videoEl.src = "videos/vine_splash.mp4";
+  </script>
+  <style>
+    .fade {
+      animation: fadeOutIn 1s ease-in-out;
+    }
+
+    @keyframes fadeOutIn {
+      0% { opacity: 1; }
+      50% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+  </style>
 </body>
 </html>
